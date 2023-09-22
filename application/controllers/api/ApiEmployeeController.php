@@ -46,4 +46,12 @@ class ApiEmployeeController extends RestController
 
 		$this->response($data, 200);
 	}
+
+	// Get By ID
+	public function find_employee_get($id)
+	{
+		$employee = new EmployeeModel;
+		$result = $employee->editEmployee($id);
+		$this->response($result, 200);
+	}
 }
