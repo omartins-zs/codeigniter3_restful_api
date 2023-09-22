@@ -59,3 +59,4 @@ $route['api/employee'] = 'api/ApiEmployeeController/index';
 $route['api/employee/store'] = 'api/ApiEmployeeController/store_employee';
 $route['api/employee/edit/(:any)'] = 'api/ApiEmployeeController/find_employee/$1';
 $route['api/employee/update/(:any)'] = 'api/ApiEmployeeController/update_employee/$1';
+$route['api/employee/delete/(:any)'] = 'api/ApiEmployeeController/delete_employee/$1';
