@@ -23,15 +23,27 @@ class ApiEmployeeController extends RestController
 
 	public function store_employee_post()
 	{
-		// echo "I am Employee inde function API";
+		$employee = new EmployeeModel;
+
 		$data = [
 			'nome' => $this->input->post('nome'),
 			'sobrenome' => $this->input->post('sobrenome'),
 			'celular' => $this->input->post('celular'),
 			'email' => $this->input->post('email'),
 		];
-		// new EmployeeModel;
-		// $result_emp = $employee->get_employee();
+		$result = $employee->insertEmployee($data);
+		if ($result > 0) {
+			$this->response([
+				'status' => true,
+				'message' => 'NEW EMPLOYEE CREATED'
+			], RestController::HTTP_CREATED);
+		} else {
+			$this->response([
+				'status' => FALSE,
+				'message' => 'FAILED TO CREATED EMPLOYEE'
+			], RestController::HTTP_BAD_REQUEST);
+		}
+
 		$this->response($data, 200);
 	}
 }
