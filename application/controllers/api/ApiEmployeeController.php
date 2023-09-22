@@ -54,4 +54,28 @@ class ApiEmployeeController extends RestController
 		$result = $employee->editEmployee($id);
 		$this->response($result, 200);
 	}
+
+	public function update_employee_put($id)
+	{
+		$employee = new EmployeeModel;
+
+		$data = [
+			'nome' => $this->put('nome'),
+			'sobrenome' => $this->put('sobrenome'),
+			'celular' => $this->put('celular'),
+			'email' => $this->put('email'),
+		];
+		$update_result = $employee->update_employee($id, $data);
+		if ($update_result > 0) {
+			$this->response([
+				'status' => true,
+				'message' => 'EMPLOYEE UPDATED'
+			], RestController::HTTP_OK);
+		} else {
+			$this->response([
+				'status' => false,
+				'message' => 'FAILED TO UPDATE EMPLOYEE'
+			], RestController::HTTP_BAD_REQUEST);
+		}
+	}
 }
