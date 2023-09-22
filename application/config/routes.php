@@ -56,3 +56,4 @@ $route['translate_uri_dashes'] = FALSE;
 
 $route['api/demo'] = 'api/ApiDemoController/index';
 $route['api/employee'] = 'api/ApiEmployeeController/index';
+$route['api/employee/store'] = 'api/ApiEmployeeController/store_employee';
