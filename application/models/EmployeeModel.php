@@ -14,4 +14,11 @@ class EmployeeModel extends CI_Model
 	{
 		return $this->db->insert('employee', $data);
 	}
+
+	public function editEmployee($id)
+	{
+		$this->db->where('id', $id);
+		$query = $this->db->get('employee');
+		return $query->row();
+	}
 }
