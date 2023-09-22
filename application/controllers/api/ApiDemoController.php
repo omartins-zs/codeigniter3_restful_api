@@ -7,8 +7,7 @@ use chriskacerguis\RestServer\RestController;
 
 class ApiDemoController extends RestController
 {
-	public function index()
-
+	public function index_get()
 	{
 		echo "I am RESTful API";
 	}
