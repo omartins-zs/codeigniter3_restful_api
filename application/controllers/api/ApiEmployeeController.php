@@ -78,4 +78,21 @@ class ApiEmployeeController extends RestController
 			], RestController::HTTP_BAD_REQUEST);
 		}
 	}
+
+	public function delete_employee_delete($id)
+	{
+		$employee = new EmployeeModel;
+		$result = $employee->delete_employee($id);
+		if ($result > 0) {
+			$this->response([
+				'status' => true,
+				'message' => 'EMPLOYEE DELETED'
+			], RestController::HTTP_CREATED);
+		} else {
+			$this->response([
+				'status' => FALSE,
+				'message' => 'FAILED TO DELETED EMPLOYEE'
+			], RestController::HTTP_BAD_REQUEST);
+		}
+	}
 }
