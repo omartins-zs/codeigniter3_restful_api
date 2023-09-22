@@ -5,6 +5,75 @@
 
 https://www.fundaofwebit.com/post/codeigniter-3-restful-api-tutorial-using-postman
 
+https://www.youtube.com/playlist?list=PLRheCL1cXHrtV_KV9eNobLJnXMtgQd_x0
 
+codeigniter-restserver	https://github.com/chriskacerguis/codeigniter-restserver
 
 Codeigniter 3 RESTful API
+Comando para Rodar Projeto
+php -S localhost:8080
+
+GabrielMartinsZika
+Zika2023@#$
+
+Script 1
+
+CREATE TABLE `codeigniter3_restful_api`.`api_keys` ( `id` INT(11) NOT NULL AUTO_INCREMENT , `user_id` INT(11) NOT NULL , `key` VARCHAR(40) NOT NULL , `level` INT(2) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+
+ALTER TABLE `api_keys` ADD `ignone_limits` TINYINT(1) NOT NULL AFTER `level`, ADD `is_private_key` TINYINT(1) NOT NULL AFTER `ignone_limits`, ADD `ip_addresses` TEXT NULL DEFAULT NULL AFTER `is_private_key`, ADD `date_created` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP AFTER `ip_addresses`;
+
+ALTER TABLE `api_keys` CHANGE `key` `my_key` VARCHAR(40) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;
+
+
+
+CREATE TABLE `codeigniter3_restful_api`.`employee` ( `id` INT NOT NULL AUTO_INCREMENT , `nome` VARCHAR(20) NOT NULL , `sobrenome` VARCHAR(20) NOT NULL , `celular` VARCHAR(15) NOT NULL , `email` VARCHAR(50) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+
+INSERT INTO `employee` (`id`, `nome`, `sobrenome`, `celular`, `email`) VALUES (NULL, 'Lucas', 'Guedes', '11245687451', 'lucas@email.com');
+
+---
+
+Script 2 --
+
+CREATE DATABASE codeigniter3_restful_api
+
+-- Database: `codeigniter3_restful_api`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `api_keys`
+--
+
+CREATE TABLE `api_keys` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `my_key` varchar(40) NOT NULL,
+  `level` int(2) NOT NULL,
+  `ignone_limits` tinyint(1) NOT NULL,
+  `is_private_key` tinyint(1) NOT NULL,
+  `ip_addresses` text,
+  `date_created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `api_keys`
+--
+ALTER TABLE `api_keys`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `api_keys`
+--
+ALTER TABLE `api_keys`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+COMMIT;
+
