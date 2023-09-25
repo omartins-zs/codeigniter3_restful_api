@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 /*
 | -------------------------------------------------------------------------
@@ -53,10 +53,17 @@ $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-
+// Employee - Funcionarios
 $route['api/demo'] = 'api/ApiDemoController/index';
 $route['api/employee'] = 'api/ApiEmployeeController/index';
 $route['api/employee/store'] = 'api/ApiEmployeeController/store_employee';
 $route['api/employee/edit/(:any)'] = 'api/ApiEmployeeController/find_employee/$1';
 $route['api/employee/update/(:any)'] = 'api/ApiEmployeeController/update_employee/$1';
 $route['api/employee/delete/(:any)'] = 'api/ApiEmployeeController/delete_employee/$1';
+
+// Students - alunos/ estudantes
+$route['api/students'] = 'api/ApiStudentController/indexStudent';
+$route['api/students/store'] = 'api/ApiStudentController/storeStudent';
+$route['api/students/edit/(:any)'] = 'api/ApiStudentController/editStudent/$1';
+$route['api/students/update/(:any)'] = 'api/ApiStudentController/updateStudent/$1';
+$route['api/students/delete/(:any)'] = 'api/ApiStudentController/deleteStudent/$1';
