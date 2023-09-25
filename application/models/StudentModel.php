@@ -9,4 +9,9 @@ class StudentModel extends CI_Model
 		$query = $this->db->get("students");
 		return $query->result();
 	}
+
+	public function insert_student($data)
+	{
+		return $this->db->insert('students', $data);
+	}
 }
