@@ -14,6 +14,13 @@ class ApiStudentController extends RestController
 		$this->load->model('StudentModel');
 	}
 
+	public function indexStudent_get()
+	{
+		$students = new StudentModel;
+		$students = $students->get_student();
+		$this->response($students, 200);
+	}
+
 	public function storeStudent_post()
 	{
 		$students = new StudentModel;
