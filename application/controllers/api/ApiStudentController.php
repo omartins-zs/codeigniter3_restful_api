@@ -42,4 +42,33 @@ class ApiStudentController extends RestController
 			], RestController::HTTP_BAD_REQUEST);
 		}
 	}
+
+	public function editStudent_get($id)
+	{
+		$students = new StudentModel;
+		$students = $students->edit_student($id);
+		$this->response($students, 200);
+	}
+
+	public function updateStudent_put($id)
+	{
+		$students = new StudentModel;
+		$data = [
+			'name' =>  $this->put('name'),
+			'class' => $this->put('class'),
+			'email' => $this->put('email')
+		];
+		$result = $students->update_student($id, $data);
+		if ($result > 0) {
+			$this->response([
+				'status' => true,
+				'message' => 'STUDENT UPDATED'
+			], RestController::HTTP_OK);
+		} else {
+			$this->response([
+				'status' => false,
+				'message' => 'FAILED TO UPDATE STUDENT'
+			], RestController::HTTP_BAD_REQUEST);
+		}
+	}
 }
