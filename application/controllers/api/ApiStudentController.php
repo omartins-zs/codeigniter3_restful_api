@@ -71,4 +71,26 @@ class ApiStudentController extends RestController
 			], RestController::HTTP_BAD_REQUEST);
 		}
 	}
+	
+	public function deleteStudent_delete($id)
+    {
+        $students = new StudentModel;
+        $result = $students->delete_student($id);
+        if($result > 0)
+        {
+            $this->response([
+                'status' => true,
+                'message' => 'STUDENT DELETED'
+            ], RestController::HTTP_OK);
+        }
+        else
+        {
+            $this->response([
+                'status' => false,
+                'message' => 'FAILED TO DELETE STUDENT'
+            ], RestController::HTTP_BAD_REQUEST);
+        }
+    }
 }
+
+?>
