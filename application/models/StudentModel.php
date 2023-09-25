@@ -22,11 +22,12 @@ class StudentModel extends CI_Model
 		return $query->row();
 	}
 
-	public function update_student($data, $id)
+	public function update_student($id, $data)
 	{
 		$this->db->where('id', $id);
 		return $this->db->update('students', $data);
 	}
+	
 	public function delete_student($id)
 	{
 		return $this->db->delete('students', ['id' => $id]);
