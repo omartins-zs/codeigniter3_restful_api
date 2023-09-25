@@ -85,3 +85,6 @@ CREATE TABLE `students` (
     `email` varchar(255) NOT NULL,
     `created_at` datetime NOT NULL,
     `updated_at` datetime NOT NULL)
+
+ALTER TABLE `students` ADD PRIMARY KEY(`id`);
+ALTER TABLE `students` CHANGE `id` `id` INT(11) NOT NULL AUTO_INCREMENT;
