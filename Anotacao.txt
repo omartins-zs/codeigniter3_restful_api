@@ -88,3 +88,11 @@ CREATE TABLE `students` (
 
 ALTER TABLE `students` ADD PRIMARY KEY(`id`);
 ALTER TABLE `students` CHANGE `id` `id` INT(11) NOT NULL AUTO_INCREMENT;
+
+
+
+Add Script Insert Students 
+
+INSERT INTO `students` (`id`, `name`, `class`, `email`, `created_at`, `updated_at`) VALUES (NULL, 'Lucas', '7°C', 'luquinhasgameplay@yahoo.com', '', ''), (NULL, 'Raquel', '9°A', 'raquel@email.org.br', '', ''), (NULL, 'Cristina', '1°B', 'cristina@email.com', '', ''), (NULL, 'Jefferson', '2°G', 'jefferson@email.com', '', ''), (NULL, 'Larissa', '3°Ensino Medio', 'larissaandrade@outlook.com', '', '')
+
+
